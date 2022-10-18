@@ -6,7 +6,7 @@ rm koodo-reader/.git -r
 cd koodo-reader
 # echo 'PUBLIC_URL="https://cdn.jsdelivr.net/gh/LiTugou/koodo-reader@main"' > .env
 PUBLIC_URL="https://cdn.jsdelivr.net/gh/LiTugou/koodo-reader@main"
-echo "${PUBLIC_URL}" > .env
+echo "PUBLIC_URL=${PUBLIC_URL}" > .env
 #sed -i "s?\./assets?${PUBLIC_URL}/assets?g" launchUtil.tsx
 yarn && yarn build
 sed -i "s?\./assets?${PUBLIC_URL}/assets?g" build/static/js/main.*.js
