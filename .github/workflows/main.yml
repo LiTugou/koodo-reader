@@ -13,11 +13,9 @@ jobs:
       with:
         node-version: 14
     - run: npm install -g yarn
-    - run: npx browserslist@latest --update-db
     - name: build
       run: |
         bash build.sh
-      
     - name: Commit
       run: |
         git config --global user.name "GitHub Actions"
