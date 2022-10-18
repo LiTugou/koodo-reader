@@ -4,6 +4,7 @@ tag=${latest_tag##*/}
 git clone -b ${tag} https://github.com/troyeguo/koodo-reader.git
 rm koodo-reader/.git -r
 cd koodo-reader
+echo 'PUBLIC_URL="https://cdn.jsdelivr.net/gh/LiTugou/koodo-reader@main"' > .env
 yarn && yarn build
 tar -czf koodo-reader-build.tar.gz -C ./build .
 cd ../
