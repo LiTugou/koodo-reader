@@ -7,5 +7,6 @@ cd koodo-reader
 yarn && yarn build
 tar -czf koodo-reader-build.tar.gz -C ./build .
 cd ../
+shopt -s extglob
 rm -rf !(\.*|*.sh|koodo-reader)
 cp -r koodo-reader/build/* ./
