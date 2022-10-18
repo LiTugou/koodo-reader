@@ -8,7 +8,8 @@ cd koodo-reader
 PUBLIC_URL="https://cdn.jsdelivr.net/gh/LiTugou/koodo-reader@main"
 echo "PUBLIC_URL=${PUBLIC_URL}" > .env
 #sed -i "s?\./assets?${PUBLIC_URL}/assets?g" launchUtil.tsx
-yarn && yarn build && sed -i "s?\./assets?${PUBLIC_URL}/assets?g" ./build/static/js/main.*.js
+yarn && yarn build || exit 0
+sed -i "s?\./assets?${PUBLIC_URL}/assets?g" ./build/static/js/main.*.js
 tar -czf koodo-reader-build.tar.gz -C ./build .
 cd ../
 shopt -s extglob
